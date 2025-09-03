@@ -31,6 +31,7 @@ while True:
         fin.close()
 
         response = 'HTTP/1.1 200 OK\n\n' + content
+        client_socket.sendall()
     # print(headers[0])
 
 
