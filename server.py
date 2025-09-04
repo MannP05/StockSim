@@ -26,7 +26,7 @@ while True:
     path=first_header_components[1]
     if http_method == "GET":
         if path == "/":
-            fin = open('localhost:3000')
+            fin = open('test.html')
             content = fin.read()
             fin.close()
             response = 'HTTP/1.1 200 OK\n\n' + content
