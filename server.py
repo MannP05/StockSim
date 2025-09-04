@@ -1,7 +1,7 @@
 # https://www.youtube.com/watch?v=Hncp0mPfUvk - python web server tutorial
 
 import socket
-import time
+
 
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 8080
