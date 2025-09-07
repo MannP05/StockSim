@@ -1,13 +1,33 @@
 
 // App.js
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState([{}])
+  
+  useEffect(() => {
+      fetch('nasdaq_list').then(
+        res => res.json()
+      ).then(
+        data => {
+          setData(data)
+          console.log(data)
+        }
+      )
+    }, [])
   return (
     
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-2xl">
+      {data.length === 0 ? (
+        <p>Loading...</p>
+      ) : (
+        data.map((item, i) => (
+          <p key={i}>{item.symbolCode}, Low:{item.low}, High:{item.high}</p>
+        ))
+      )}
+
+
+      {/* <div className="w-full max-w-2xl">
         <h1 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
           Stock Table
         </h1>
@@ -22,7 +42,6 @@ export default function App() {
               </tr>
             </thead>
             <tbody>
-              {/* Empty table for now */}
               <tr>
                 <td
                   colSpan="4"
@@ -33,8 +52,9 @@ export default function App() {
               </tr>
             </tbody>
           </table>
+
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
