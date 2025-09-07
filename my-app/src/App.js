@@ -1,9 +1,11 @@
 
 // App.js
-import React from "react";
+import React, {useState} from "react";
 
 export default function App() {
+  const [count, setCount] = useState(0)
   return (
+    
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-2xl">
         <h1 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
