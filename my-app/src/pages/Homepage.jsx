@@ -1,10 +1,10 @@
 import React from "react";
+import StockSearch from "../Search";
 
 export default function HomePage() {
-    return (
-        <div>
-            <h1>Welcome to the Home Page</h1>
-            <p>This is the main landing page of the application.</p>
-        </div>
-    );
+  return (
+    <main className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen">
+      <StockSearch />
+    </main>
+  );
 }

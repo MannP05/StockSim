@@ -1,17 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import RegistrationApp from "./RegistrationApp";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Homepage";
 import AnotherPage from "./pages/Registration";
+import "./App.css";
+
 export default function App() {
-  
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/register" component={RegistrationApp} />
-        <Route path="/another" component={AnotherPage} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/another" element={<AnotherPage />} />
+      </Routes>
     </Router>
   );
 }
